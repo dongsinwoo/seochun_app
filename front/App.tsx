@@ -5,7 +5,8 @@
  * @format
  */
 
-import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import React, { Component, useState } from 'react';
 import {
 
 SafeAreaView,
@@ -16,22 +17,21 @@ TouchableOpacity
 } from 'react-native';
 
 import { StyleSheet } from 'react-native';
+import AuthStackNavigator from './src/navigation/AuthStackNavigator';
 
-function App(): JSX.Element {
+function App (){
+  // 클래스형 컴포넌트
 
-  const appURL = "https://www.apple.com/kr/"
+  const handleOpenURL = () => {
+    const appURL = "https://www.apple.com/kr/";
+    Linking.openURL(appURL);
+  };
 
   return (
-    <SafeAreaView style={styles.flex}>
-      <Text onPress={()=> Linking.openURL(appURL)}>애플 바로가기</Text>
-      <TouchableOpacity onPress={()=> Linking.openURL(appURL)}>
-        <Image 
-        source={{uri: "https://cdn.imweb.me/thumbnail/20230303/b8ea3e5c047ac.jpg"}} 
-        style={{width:200, height:200}} 
-        resizeMode='cover'/>
-      </TouchableOpacity>
-      
-    </SafeAreaView>
+    <NavigationContainer>
+      <AuthStackNavigator />
+    </NavigationContainer>
+    
   );
 }
 
