@@ -2,7 +2,7 @@ import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import {StyleSheet, View,Button} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import {AuthStackParamList} from '../navigation/AuthStackNavigator'
+import {AuthStackParamList} from '../navigations/stack/AuthStackNavigator'
 import { authNavigations } from '../constants';
 
 type AuthHomeScreenProps = StackScreenProps<AuthStackParamList, typeof authNavigations.AUTH_HOME>
