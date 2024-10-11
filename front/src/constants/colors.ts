@@ -1,7 +1,7 @@
 const colors = {
-    PINK_700 : "#C63B64",
-    PINK_500 : "#BF5C79",
-    WHITE: "FFF"
+    MAIN_700 : "#3C9BEE",
+    MAIN_500 : "#8CC4F5",
+    WHITE: "#FFF"
 }
 
 export {colors}

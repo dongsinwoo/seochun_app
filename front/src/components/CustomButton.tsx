@@ -1,6 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, Pressable, PressableProps, Dimensions} from 'react-native';
-import { opacity } from 'react-native-reanimated/lib/typescript/Colors';
+import {StyleSheet, Text, Pressable, PressableProps, Dimensions, View} from 'react-native';
 import { colors } from '../constants';
 
 interface CustomButtonProps extends PressableProps{
@@ -27,13 +26,15 @@ function CustomButton({
     style ={({pressed})=> [
         styles.container, 
         styles[variant], 
-        styles[size],
         pressed ? styles[`${variant}Pressed`] : styles[variant], 
         inValid && styles.inValid]} 
 
-    {...props}
-    >
-        <Text style = {[styles.text,styles[`${variant}Text`]]}>{label}</Text>
+    {...props}>  
+
+        <View style = {styles[size]}>
+            <Text style = {[styles.text, styles[`${variant}Text`]]}>{label}</Text>
+        </View>
+        
     </Pressable>
     
   )
@@ -41,30 +42,33 @@ function CustomButton({
 
 const styles = StyleSheet.create({
     container:{
-        borderRadius: 3,
-        justifyContent: "center"
+        borderRadius: 5,
+        justifyContent: "center",
+        flexDirection: "row"
     },
     inValid:{
         opacity: 0.5 
     },
     filled:{
-        backgroundColor: colors.PINK_700,
+        backgroundColor: colors.MAIN_700,
     },
     outlined:{
-        borderColor: colors.PINK_700,
+        borderColor: colors.MAIN_700,
         borderWidth: 1,
     },
     large:{
         width: "100%",
         paddingVertical: deviceHeight > 700 ? 15 : 10,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        flexDirection: "row"
     },
     medium:{
         width: "50%",
         paddingVertical: deviceHeight > 700 ? 12 : 8,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        flexDirection: "row"
     },
     text:{
         fontSize:16,
@@ -74,13 +78,13 @@ const styles = StyleSheet.create({
         color: colors.WHITE
     },
     outlinedText:{
-        color: colors.PINK_700
+        color: colors.MAIN_700
     },
     filledPressed:{
-        backgroundColor: colors.PINK_500
+        backgroundColor: colors.MAIN_500
     },
     outlinedPressed:{
-        borderColor: colors.PINK_700,
+        borderColor: colors.MAIN_700,
         borderWidth: 1,
         opacity: 0.5
     },
