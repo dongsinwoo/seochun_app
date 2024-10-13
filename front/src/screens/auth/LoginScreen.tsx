@@ -1,62 +1,59 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import InputField from '../../components/InputField';
+import CustomButton from '../../components/CustomButton';
+import useForm from '../../hooks/useForm';
+import { validateLogin } from '../../utils';
+import { TextInput } from 'react-native-gesture-handler';
+
 
 
 function LoginScreen() {
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState("");
-
-  // const handleChangeEmail = (text:string) =>{
-  //   setEmail(text)
-  // }
-  // const handleChangePassword = (text:string) => {
-  //   setPassword(text)
-  // }
-
-  const [value, setValue] = useState({
-    email : '',
-    password : ''
+  const passwordRef = useRef<TextInput | null>(null);
+  const login = useForm({
+    initialValue: { email : '', password : '' },
+    validate: validateLogin,
   })
-  const [touched, setTouched] = useState({
-    email : false,
-    password : false
-  })
-
-  const handleChangeValue = (name: string, text:string)=>{
-    setValue({
-      ...value,
-      [name] : text
-    })
-  }
-  const handleBlur = (name:string) =>{
-    setTouched({
-      ...touched,
-      [name] : true
-    })
+  
+  const handleSubmit = ()=>{
+    console.log("values",login.values)
   }
   
   return (
     <SafeAreaView style = {styles.container}>
         <View style = {styles.inputContainer}>
           <InputField 
+          autoFocus
           placeholder='이메일' 
           inputMode='email' 
-          error='이메일을 입력하세요'
-          touched = {touched.email}
-          value={value.email} 
-          onChangeText={(text)=> handleChangeValue("email",text)}
-          onBlur={()=>handleBlur("email")} />
-          <InputField 
-          placeholder='비밀번호' 
-          value={value.password} 
-          error='비밀번호를 입력하세요'
-          touched = {touched.password}
-          onChangeText={(text)=> handleChangeValue("password",text)} 
-          onBlur={()=>handleBlur("password")}
-          secureTextEntry/>
+          error={login.errors.email}
+          touched = {login.touched.email}
+          returnKeyType='next'
+          blurOnSubmit = {false}
+          onSubmitEditing={()=> passwordRef.current?.focus()}
+          {...login.getTextInputProps("email")}
+
+          />
+          <InputField
+          ref = {passwordRef}
+          placeholder= '비밀번호'  
+          error={login.errors.password}
+          touched = {login.touched.password}
+          returnKeyType='join'
+          blurOnSubmit = {false}
+          onSubmitEditing={handleSubmit}
+          textContentType='oneTimeCode'
+          secureTextEntry
+          {...login.getTextInputProps("password")}
+          />
         </View>
+        <CustomButton
+          label='로그인'
+          variant='filled'
+          size='large'
+          onPress={handleSubmit}
+        />
     </SafeAreaView>
     
   )
@@ -69,7 +66,7 @@ const styles = StyleSheet.create({
   },
   inputContainer:{
     gap: 20,
-
+    marginBottom: 30
   }
 });
 
