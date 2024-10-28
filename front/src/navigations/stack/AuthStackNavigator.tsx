@@ -16,6 +16,8 @@ export type AuthStackParamList = {
 }
 
 function AuthStackNavigator() {
+  // Stack_navigator
+  // 스택형식으로 화면이 전환되고 history를 남김
   // 파라미터 타입 객체 넣어주기
     const Stack = createStackNavigator<AuthStackParamList>();
   return (

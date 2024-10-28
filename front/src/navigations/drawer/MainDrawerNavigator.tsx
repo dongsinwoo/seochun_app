@@ -8,6 +8,8 @@ const Drawer = createDrawerNavigator();
    
 
     return(
+        // drawer_navigator 부분 
+        // 스크린별 화면 이동
         <Drawer.Navigator>
             <Drawer.Screen name="MapHome" component={MapHomeScreen} />
             <Drawer.Screen name="FeedHome" component={FeedHomeScreen} />

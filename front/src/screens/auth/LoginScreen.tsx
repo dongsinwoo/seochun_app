@@ -1,16 +1,18 @@
-import React, { useRef, useState } from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import React, { useRef, } from 'react';
+import {StyleSheet, View,} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import InputField from '../../components/InputField';
 import CustomButton from '../../components/CustomButton';
 import useForm from '../../hooks/useForm';
 import { validateLogin } from '../../utils';
 import { TextInput } from 'react-native-gesture-handler';
+import useAuth from '../../hooks/queries/useAuth';
 
 
 
 function LoginScreen() {
   const passwordRef = useRef<TextInput | null>(null);
+  const {loginMutation} = useAuth(); 
   const login = useForm({
     initialValue: { email : '', password : '' },
     validate: validateLogin,
@@ -18,6 +20,8 @@ function LoginScreen() {
   
   const handleSubmit = ()=>{
     console.log("values",login.values)
+    loginMutation.mutate(login.values);
+    console.log(loginMutation.mutate(login.values))
   }
   
   return (

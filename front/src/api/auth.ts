@@ -1,6 +1,7 @@
 import axiosInstance from "./axios";
 import { Category, Profile } from "../types/domain";
 import { getEncryptStorage } from "../utils";
+import { storageKeys } from "../constants";
 
 type RequestUser = {
     email:string;
@@ -22,7 +23,7 @@ type ResponseToken = {
 }
 
 const postLogin = async ({email,password}:RequestUser):Promise<ResponseToken> =>{
-    const {data} = await axiosInstance.post("/auth/signup", {
+    const {data} = await axiosInstance.post("/auth/signin", {
         email,
         password
     });
@@ -39,7 +40,7 @@ const getProfile = async():Promise<ResponseProfile> =>{
 }
 
 const getAccessToken = async ():Promise<ResponseToken> =>{
-    const refreshToken = await getEncryptStorage("refreshToken")
+    const refreshToken = await getEncryptStorage(storageKeys.REFRESH_TOKEN)
     const {data} = await axiosInstance.get('/auth/refresh',{
         headers: {
             Authorization: `Bearer ${refreshToken}`
