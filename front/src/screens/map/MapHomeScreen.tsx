@@ -10,6 +10,7 @@ import { DrawerNavigationProp } from '@react-navigation/drawer';
 import { MainDrawerParamList } from '@/navigations/drawer/MainDrawerNavigator';
 import useAuth from '@/hooks/queries/useAuth';
 import useUserLocation from '@/hooks/useUserLocation';
+import usePermission from '@/hooks/usePermission';
 
 
 
@@ -23,6 +24,7 @@ function MapHomeScreen() {
   const navigation = useNavigation<Navigation>();
   const {userLocation, isUserLocationError} = useUserLocation();
   const mapRef = useRef<MapView | null>(null);
+  usePermission("LOCATION");
   const handleLogout = () => {
     logoutMutation.mutate(null);
   }
