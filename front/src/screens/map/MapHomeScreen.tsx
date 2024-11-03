@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {Platform, Pressable, StyleSheet, Text,View} from 'react-native';
-import MapView, { LatLng, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Callout, LatLng, LongPressEvent, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { colors } from '@/constants';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CompositeNavigationProp, useNavigation } from '@react-navigation/native';
@@ -11,8 +11,10 @@ import { MainDrawerParamList } from '@/navigations/drawer/MainDrawerNavigator';
 import useAuth from '@/hooks/queries/useAuth';
 import useUserLocation from '@/hooks/useUserLocation';
 import usePermission from '@/hooks/usePermission';
-
-
+// 아이콘을 직접 선택해서 사용해도됨
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import mapStyle from '@/styles/mapStyle';
 
 type Navigation = CompositeNavigationProp< 
 StackNavigationProp<MapStackParamList>, 
@@ -24,6 +26,8 @@ function MapHomeScreen() {
   const navigation = useNavigation<Navigation>();
   const {userLocation, isUserLocationError} = useUserLocation();
   const mapRef = useRef<MapView | null>(null);
+  const [selectLocation, setSelectLocation] = useState<LatLng>();
+
   usePermission("LOCATION");
   const handleLogout = () => {
     logoutMutation.mutate(null);
@@ -33,9 +37,13 @@ function MapHomeScreen() {
     mapRef.current?.animateToRegion({
       latitude: userLocation.latitude,
       longitude: userLocation.longitude,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
+      latitudeDelta: 0.00922,
+      longitudeDelta: 0.00421,
     });
+  }
+
+  const handleLongPressMapView = (nativeEvent: LongPressEvent) => {
+    setSelectLocation(nativeEvent.nativeEvent.coordinate);
   }
 
 
@@ -54,16 +62,39 @@ function MapHomeScreen() {
         followsUserLocation
         // 내 위치 버튼
         showsMyLocationButton ={false}
-      />
+        customMapStyle={mapStyle}
+
+        // 지도를 클릭했을 때 마커추가
+        onLongPress={handleLongPressMapView}
+        >
+          <Marker
+            coordinate={{
+              latitude: 36.077406, 
+              longitude: 126.693889}}
+          />
+          <Marker
+            coordinate={{
+              latitude: 36.078406, 
+              longitude: 126.693889}}
+          />
+          {selectLocation && (
+            <Callout>
+              <Marker
+                coordinate={selectLocation}
+              />
+            </Callout>
+          )}
+        </MapView>
+      
       <Pressable 
       style={[styles.drawerButton, {top: inset.top || 20}]} 
       onPress={() => navigation.openDrawer()}
       >
-        <Text>서랍</Text>
+        <Ionicons name='menu' size={25} color={colors.WHITE} />
       </Pressable>
       <View style={styles.buttonList}>
         <Pressable style={styles.mapButton} onPress={handlePressUserLocation}>
-          <Text>내 위치</Text>
+          <MaterialIcons name='my-location' size={25} color={colors.WHITE} />
         </Pressable>
       </View>
     </>
