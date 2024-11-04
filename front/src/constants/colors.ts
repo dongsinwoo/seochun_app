@@ -8,6 +8,7 @@ const colors = {
     RED_300 : "#FFB4B4",
     BLACK: "#000",
     WHITE: "#FFF",
+    BLUE_100: "#ECF6FF",
 
     // CustomMarker
     PINK_400: "#EC87A5",
