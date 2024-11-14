@@ -42,21 +42,23 @@ const HomeScreen = () => {
         </View>
 
         {/* Map Section */}
-        <TouchableOpacity style={styles.mapContainer} onPress={() => navigation.navigate('MapStack')}>
-          <Text style={styles.sectionTitle}>서천 느리게 여행하기</Text>
-          {/* Map Component will go here */}
-        </TouchableOpacity>
+        <View style={styles.optionsContainer}>
+          <TouchableOpacity style={styles.mapContainer} onPress={() => navigation.navigate('MapStack')}>
+            <Text style={styles.sectionTitle}>서천 느리게 여행하기</Text>
+            {/* Map Component will go here */}
+          </TouchableOpacity>
+        </View>
 
         {/* Additional Options */}
         <View style={styles.additionalSection}>
           <Text style={styles.sectionTitle}>이런것도 있어요</Text>
           <View style={styles.optionsContainer}>
-            <TouchableOpacity style={styles.optionBox}>
+            <TouchableOpacity style={styles.bottom_ui}>
               <Image source={require('@/assets/home/home_paty.png')} style={styles.optionIcon} />
               <Text style={styles.optionText}>느린 파티</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.optionBox}>
+            <TouchableOpacity style={styles.bottom_ui}>
               <Image source={require('@/assets/home/home_bus.png')} style={styles.optionIcon} />
               <Text style={styles.optionText}>셔틀 운행</Text>
             </TouchableOpacity>
@@ -93,6 +95,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.WHITE,
+    width: "100%",
   },
   headerTitle: {
     fontSize: 20,
@@ -118,7 +121,9 @@ const styles = StyleSheet.create({
   optionsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop:16
+    marginTop:16,
+    columnGap: 16,
+    width: "100%",
   },
   optionBox: {
     position: 'relative',
@@ -126,9 +131,18 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 10,
     alignItems: 'center',
-    width: 171,
+    width: "50%",
     height: 171,
     justifyContent: 'center',
+  },
+  bottom_ui: {
+    padding: 20,
+    width: "50%",
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.GRAY_200,
+    borderRadius: 10,
   },
   optionIcon: {
     
@@ -162,36 +176,41 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   mapContainer: {
-    padding: 15,
+    padding: 16,
     backgroundColor: '#F5F5F5',
     borderRadius: 10,
     height: 200,
-    width: "100%",
-    marginTop:16
+    marginTop:16,
+    width: "100%"
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 10,
   },
   additionalSection: {
-    padding: 15,
+    marginTop: 20
   },
   bottomNav: {
     flexDirection: 'row',
-    justifyContent: 'space-between',  // space-around에서 변경
-    alignItems: 'center',
-    padding: 15,
-    paddingHorizontal: 30,  // 좌우 패딩 추가
-    borderTopWidth: 1,
-    borderTopColor: '#eee',
-    position: 'relative',
-    height: 80, 
+    justifyContent: 'space-around',
+    marginTop:16,
+    columnGap: 16,
+    width: "100%",
+    elevation: 5, 
+    shadowColor: '#666666',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.15,
+    shadowRadius: 3.84,
+    zIndex: 99,
   },
   navItem: {
     width: 70,  //
     alignItems: 'center',
     justifyContent: 'center',
+  
   },
   navIcon: {
     width: 24,
@@ -206,7 +225,7 @@ const styles = StyleSheet.create({
   qrCode: {
     position: 'absolute',
     left: SCREEN_WIDTH / 2 - 29,
-    top: -20,  // 위로 올리기
+    top: -30,  // 위로 올리기
     backgroundColor: colors.MAIN_700,
     width: 58,
     height: 58,
@@ -219,7 +238,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.15,
     shadowRadius: 3.84,
     zIndex: 1,
   },
