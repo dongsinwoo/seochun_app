@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
-import {Platform, Pressable, StyleSheet, Text,View} from 'react-native';
+import {Platform, Pressable, StyleSheet, View} from 'react-native';
 import MapView, { Callout, LatLng, LongPressEvent, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import { colors } from '@/constants';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { CompositeNavigationProp, useNavigation } from '@react-navigation/native';
+import { CompositeNavigationProp,  DrawerActions,  useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { MapStackParamList } from '@/navigations/stack/MapStackNavigator';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
@@ -18,7 +18,7 @@ import mapStyle from '@/styles/mapStyle';
 import CustomMarker from '@/components/CustomMarker';
 
 type Navigation = CompositeNavigationProp< 
-StackNavigationProp<MapStackParamList>, 
+StackNavigationProp<MapStackParamList, 'MapHome'>, 
 DrawerNavigationProp<MainDrawerParamList>>
 
 function MapHomeScreen() {
@@ -99,7 +99,7 @@ function MapHomeScreen() {
       
       <Pressable 
       style={[styles.drawerButton, {top: inset.top || 20}]} 
-      onPress={() => navigation.openDrawer()}
+      onPress={() =>navigation.dispatch(DrawerActions.openDrawer())}
       >
         <Ionicons name='menu' size={25} color={colors.WHITE} />
       </Pressable>
