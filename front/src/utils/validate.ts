@@ -34,5 +34,15 @@ type UserInfomation = {
 
     return signupErrors
   }
+  function validateAddPost(values: {title: string}){
+    const errors = {
+        title : '',
+        description : ''
+      };
+      if (values.title.trim() === ''){
+        errors.title = "제목을 입력해주세요."
+      }
+      return errors;
+  }
 
-  export {validateLogin, validateSignup};
+  export {validateLogin, validateSignup, validateAddPost};

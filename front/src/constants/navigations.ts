@@ -13,6 +13,7 @@ const authNavigations = {
 
 const mapNavigations = {
   MAP_HOME : "MapHome",
+  MAP_ADD_POST : "MapAddPost"
 
 } as const;
 

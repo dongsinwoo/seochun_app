@@ -11,8 +11,8 @@ import useAuth from '../../hooks/queries/useAuth';
 
 
 function LoginScreen() {
-  const passwordRef = useRef<TextInput | null>(null);
   const {loginMutation} = useAuth(); 
+  const passwordRef = useRef<TextInput | null>(null);
   const login = useForm({
     initialValue: { email : '', password : '' },
     validate: validateLogin,

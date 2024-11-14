@@ -6,13 +6,14 @@ import { mergeRefs } from '../utils';
 interface InputFieldProps extends TextInputProps {
     disabled?: boolean,
     error? : string,
-    touched? : boolean
+    touched? : boolean,
+    icon?: React.ReactNode
 }
 
 const deviceHeight = Dimensions.get("screen").height
 
 const InputField = forwardRef((
-    {disabled = false, error, touched,...props}: InputFieldProps, ref?:ForwardedRef<TextInput>
+    {disabled = false, error, touched, icon=null, ...props}: InputFieldProps, ref?:ForwardedRef<TextInput>
 ) => {
     const innerRef = useRef<TextInput | null>(null);
     const handlePressInput = () =>{
@@ -20,16 +21,23 @@ const InputField = forwardRef((
     }
   return (
     <Pressable onPress={() => handlePressInput()}>
-        <View style={[styles.container, disabled && styles.disabled, touched && Boolean(error)&& styles.inputError]}>
-            <TextInput 
-                ref = {ref? mergeRefs(innerRef, ref): innerRef}
-                editable={!disabled} 
-                placeholderTextColor={colors.GRAY_500} 
-                style ={ [styles.input, disabled && styles.disabled ]} 
-                autoCapitalize='none'
-                spellCheck = {false}
-                autoCorrect={false}
-                {...props}/>
+        <View style={[
+            styles.container, 
+            disabled && styles.disabled, 
+            props.multiline && styles.multiline,
+            touched && Boolean(error)&& styles.inputError]}>
+            <View style={Boolean(icon) && styles.innerContainer}>
+                {icon}
+                <TextInput 
+                    ref = {ref? mergeRefs(innerRef, ref): innerRef}
+                    editable={!disabled} 
+                    placeholderTextColor={colors.GRAY_500} 
+                    style ={ [styles.input, disabled && styles.disabled ]} 
+                    autoCapitalize='none'
+                    spellCheck = {false}
+                    autoCorrect={false}
+                    {...props}/>
+            </View>
             {touched && Boolean(error) && <Text style = {styles.error}>{error}</Text>}
         </View>
     </Pressable>
@@ -59,6 +67,15 @@ const styles = StyleSheet.create({
         color : colors.RED_500,
         fontSize:12,
         paddingTop:5 
+    },
+    innerContainer:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 5,
+    },
+    multiline:{
+        height: 100,
+        paddingBottom: deviceHeight > 700 ? 45 : 30,
     }
 });
 

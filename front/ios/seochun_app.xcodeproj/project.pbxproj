@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* seochun_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* seochun_appTests.m */; };
+		093BD11A0E7C159B2945B938 /* libPods-seochun_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245470789DA515D60C07669C /* libPods-seochun_app.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		19970C03651B662D7F547DE2 /* libPods-seochun_app-seochun_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B1C8FC9F66FC15BCBCEE90 /* libPods-seochun_app-seochun_appTests.a */; };
 		31F585B42CD7EF4300DA27FC /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31580C4C2CD7D0D600B7EC89 /* Ionicons.ttf */; };
 		31F585B52CD7EF4300DA27FC /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31580C482CD7D0CF00B7EC89 /* MaterialIcons.ttf */; };
 		31F585B62CD7EF4300DA27FC /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31580C492CD7D0CF00B7EC89 /* Octicons.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		CF55031FE7C6969CEF99E6C9 /* libPods-seochun_app-seochun_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCBF32D00850057EAE72FC1 /* libPods-seochun_app-seochun_appTests.a */; };
-		DCC5E8EB76DCD61FD2402B73 /* libPods-seochun_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0779DD592E681EAB2550B1E /* libPods-seochun_app.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +39,16 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = seochun_app/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = seochun_app/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = seochun_app/main.m; sourceTree = "<group>"; };
-		1BCBF32D00850057EAE72FC1 /* libPods-seochun_app-seochun_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seochun_app-seochun_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		21E319AC583A54D067B924F4 /* Pods-seochun_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app.release.xcconfig"; path = "Target Support Files/Pods-seochun_app/Pods-seochun_app.release.xcconfig"; sourceTree = "<group>"; };
+		245470789DA515D60C07669C /* libPods-seochun_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seochun_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B1C8FC9F66FC15BCBCEE90 /* libPods-seochun_app-seochun_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seochun_app-seochun_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31580C482CD7D0CF00B7EC89 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		31580C492CD7D0CF00B7EC89 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		31580C4C2CD7D0D600B7EC89 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = SOURCE_ROOT; };
-		813CAF851C50A597A2FACB6A /* Pods-seochun_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app.debug.xcconfig"; path = "Target Support Files/Pods-seochun_app/Pods-seochun_app.debug.xcconfig"; sourceTree = "<group>"; };
+		66BE2E831B692971FD42B596 /* Pods-seochun_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app.debug.xcconfig"; path = "Target Support Files/Pods-seochun_app/Pods-seochun_app.debug.xcconfig"; sourceTree = "<group>"; };
+		797C211342555E38B3F6620B /* Pods-seochun_app-seochun_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app-seochun_appTests.debug.xcconfig"; path = "Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = seochun_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A0779DD592E681EAB2550B1E /* libPods-seochun_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seochun_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9F5D2AFBC9E9C6E3E6CE224 /* Pods-seochun_app-seochun_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app-seochun_appTests.release.xcconfig"; path = "Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests.release.xcconfig"; sourceTree = "<group>"; };
-		D9AB50E04B7C91B9F9129064 /* Pods-seochun_app-seochun_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app-seochun_appTests.debug.xcconfig"; path = "Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		891895F196ED22AF78422342 /* Pods-seochun_app-seochun_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app-seochun_appTests.release.xcconfig"; path = "Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		A8867433B2C41D3835B905FA /* Pods-seochun_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seochun_app.release.xcconfig"; path = "Target Support Files/Pods-seochun_app/Pods-seochun_app.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF55031FE7C6969CEF99E6C9 /* libPods-seochun_app-seochun_appTests.a in Frameworks */,
+				19970C03651B662D7F547DE2 /* libPods-seochun_app-seochun_appTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC5E8EB76DCD61FD2402B73 /* libPods-seochun_app.a in Frameworks */,
+				093BD11A0E7C159B2945B938 /* libPods-seochun_app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				A0779DD592E681EAB2550B1E /* libPods-seochun_app.a */,
-				1BCBF32D00850057EAE72FC1 /* libPods-seochun_app-seochun_appTests.a */,
+				245470789DA515D60C07669C /* libPods-seochun_app.a */,
+				30B1C8FC9F66FC15BCBCEE90 /* libPods-seochun_app-seochun_appTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,10 +157,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				813CAF851C50A597A2FACB6A /* Pods-seochun_app.debug.xcconfig */,
-				21E319AC583A54D067B924F4 /* Pods-seochun_app.release.xcconfig */,
-				D9AB50E04B7C91B9F9129064 /* Pods-seochun_app-seochun_appTests.debug.xcconfig */,
-				A9F5D2AFBC9E9C6E3E6CE224 /* Pods-seochun_app-seochun_appTests.release.xcconfig */,
+				66BE2E831B692971FD42B596 /* Pods-seochun_app.debug.xcconfig */,
+				A8867433B2C41D3835B905FA /* Pods-seochun_app.release.xcconfig */,
+				797C211342555E38B3F6620B /* Pods-seochun_app-seochun_appTests.debug.xcconfig */,
+				891895F196ED22AF78422342 /* Pods-seochun_app-seochun_appTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -172,12 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "seochun_appTests" */;
 			buildPhases = (
-				FDA34BCA8E6801397D330CDB /* [CP] Check Pods Manifest.lock */,
+				20A570CF7F836646AE5CBB25 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				62D689E30142B9B18C2D11ED /* [CP] Embed Pods Frameworks */,
-				B66975D0C8728E70ADFB9C95 /* [CP] Copy Pods Resources */,
+				5C2A9794F775FD16AB9D6723 /* [CP] Embed Pods Frameworks */,
+				884D550712C59D559AB5F18A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,14 +193,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "seochun_app" */;
 			buildPhases = (
-				B64627980A7376372B566301 /* [CP] Check Pods Manifest.lock */,
+				4197001228A13C6B0C09517C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				602C27CD44A693DE4EE50940 /* [CP] Embed Pods Frameworks */,
-				DAA8B36FA90EDCE67EEB22AC /* [CP] Copy Pods Resources */,
+				77244A4AE0D3873D0ACD7FF1 /* [CP] Embed Pods Frameworks */,
+				988352C2775354871EB78A0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,41 +286,29 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		602C27CD44A693DE4EE50940 /* [CP] Embed Pods Frameworks */ = {
+		20A570CF7F836646AE5CBB25 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-seochun_app/Pods-seochun_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-seochun_app/Pods-seochun_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-seochun_app-seochun_appTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seochun_app/Pods-seochun_app-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		62D689E30142B9B18C2D11ED /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B64627980A7376372B566301 /* [CP] Check Pods Manifest.lock */ = {
+		4197001228A13C6B0C09517C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,7 +330,41 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B66975D0C8728E70ADFB9C95 /* [CP] Copy Pods Resources */ = {
+		5C2A9794F775FD16AB9D6723 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77244A4AE0D3873D0ACD7FF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seochun_app/Pods-seochun_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-seochun_app/Pods-seochun_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seochun_app/Pods-seochun_app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		884D550712C59D559AB5F18A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,7 +381,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-seochun_app-seochun_appTests/Pods-seochun_app-seochun_appTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DAA8B36FA90EDCE67EEB22AC /* [CP] Copy Pods Resources */ = {
+		988352C2775354871EB78A0F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,28 +417,6 @@
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FDA34BCA8E6801397D330CDB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-seochun_app-seochun_appTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -450,7 +450,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9AB50E04B7C91B9F9129064 /* Pods-seochun_app-seochun_appTests.debug.xcconfig */;
+			baseConfigurationReference = 797C211342555E38B3F6620B /* Pods-seochun_app-seochun_appTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -477,7 +477,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9F5D2AFBC9E9C6E3E6CE224 /* Pods-seochun_app-seochun_appTests.release.xcconfig */;
+			baseConfigurationReference = 891895F196ED22AF78422342 /* Pods-seochun_app-seochun_appTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -501,7 +501,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 813CAF851C50A597A2FACB6A /* Pods-seochun_app.debug.xcconfig */;
+			baseConfigurationReference = 66BE2E831B692971FD42B596 /* Pods-seochun_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -528,7 +528,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21E319AC583A54D067B924F4 /* Pods-seochun_app.release.xcconfig */;
+			baseConfigurationReference = A8867433B2C41D3835B905FA /* Pods-seochun_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -1,14 +1,13 @@
 import React, { useRef, useState } from 'react';
-import {Platform, Pressable, StyleSheet, View} from 'react-native';
+import {Alert, Platform, Pressable, StyleSheet, View} from 'react-native';
 import MapView, { Callout, LatLng, LongPressEvent, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import { colors } from '@/constants';
+import { alerts, colors, mapNavigations } from '@/constants';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { CompositeNavigationProp,  DrawerActions,  useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { MapStackParamList } from '@/navigations/stack/MapStackNavigator';
 import { DrawerNavigationProp } from '@react-navigation/drawer';
 import { MainDrawerParamList } from '@/navigations/drawer/MainDrawerNavigator';
-import useAuth from '@/hooks/queries/useAuth';
 import useUserLocation from '@/hooks/useUserLocation';
 import usePermission from '@/hooks/usePermission';
 // 아이콘을 직접 선택해서 사용해도됨
@@ -16,6 +15,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import mapStyle from '@/styles/mapStyle';
 import CustomMarker from '@/components/CustomMarker';
+import useGetMarkers from '@/hooks/queries/useGetMarkers';
+
 
 type Navigation = CompositeNavigationProp< 
 StackNavigationProp<MapStackParamList, 'MapHome'>, 
@@ -23,16 +24,12 @@ DrawerNavigationProp<MainDrawerParamList>>
 
 function MapHomeScreen() {
   const inset = useSafeAreaInsets();
-  const {logoutMutation} = useAuth();
   const navigation = useNavigation<Navigation>();
   const {userLocation, isUserLocationError} = useUserLocation();
   const mapRef = useRef<MapView | null>(null);
-  const [selectLocation, setSelectLocation] = useState<LatLng>();
-
+  const [selectLocation, setSelectLocation] = useState<LatLng|null>();
+  const {data: markers = []} = useGetMarkers();
   usePermission("LOCATION");
-  const handleLogout = () => {
-    logoutMutation.mutate(null);
-  }
   const handlePressUserLocation = () => {
     if(isUserLocationError) return;
     mapRef.current?.animateToRegion({
@@ -45,6 +42,20 @@ function MapHomeScreen() {
 
   const handleLongPressMapView = (nativeEvent: LongPressEvent) => {
     setSelectLocation(nativeEvent.nativeEvent.coordinate);
+  }
+
+  const handlePressAddPost = () => {
+    if(!selectLocation){
+      return Alert.alert(
+        alerts.NOT_SELECT_LOCATION.TITLE,
+        alerts.NOT_SELECT_LOCATION.DESCRIPTION
+      );
+    }
+    navigation.navigate(mapNavigations.MAP_ADD_POST,{
+      location: selectLocation,
+      
+    });
+    setSelectLocation(null);
   }
 
 
@@ -68,26 +79,17 @@ function MapHomeScreen() {
         // 지도를 클릭했을 때 마커추가
         onLongPress={handleLongPressMapView}
         >
-          <CustomMarker
-            coordinate={{
-              latitude: 36.077406, 
-              longitude: 126.693889}}
-              color="RED"
-          />
-          <CustomMarker
-            coordinate={{
-              latitude: 36.078406, 
-              longitude: 126.693889}}
-              color="BLUE"
-              score={3}
-          />
-          <CustomMarker
-            coordinate={{
-              latitude: 36.076406, 
-              longitude: 126.693889}}
-              color="YELLOW"
-              score={1}
-          />
+          {markers.map(({id, color, score, latitude, longitude}) => (
+            <CustomMarker
+              key={id}
+              color={color}
+              score={score}
+              coordinate={{
+                latitude,
+                longitude,
+              }}
+            />
+          ))}
           {selectLocation && (
             <Callout>
               <Marker
@@ -104,6 +106,9 @@ function MapHomeScreen() {
         <Ionicons name='menu' size={25} color={colors.WHITE} />
       </Pressable>
       <View style={styles.buttonList}>
+        <Pressable style={styles.mapButton} onPress={handlePressAddPost}>
+          <MaterialIcons name='add' size={25} color={colors.WHITE} />
+        </Pressable>
         <Pressable style={styles.mapButton} onPress={handlePressUserLocation}>
           <MaterialIcons name='my-location' size={25} color={colors.WHITE} />
         </Pressable>
