@@ -1,79 +1,33 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 서천 느린여행 🚲
+자전거와 함께하는 여유로운 서천 여행
 
-# Getting Started
+## 서비스 소개
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+### 🌊 느린여행의 의미
 
-## Step 1: Start the Metro Server
+서천은 한적한 시골 풍경과 아름다운 바다가 조화를 이루는 충청남도의 보석 같은 곳입니다. '느린여행'은 바쁜 일상을 벗어나 자전거를 타고 천천히, 그리고 여유롭게 서천의 숨은 매력을 발견하는 여행을 제안합니다.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+### 🎯 주요 목적
+- 청년들에게 새로운 여행 경험 제공
+- 자전거를 통한 친환경적인 여행 문화 조성
+- 서천의 아름다운 자연과 로컬 문화 체험 기회 제공
 
-To start Metro, run the following command from the _root_ of your React Native project:
+### 🌿 서비스 특징
+- 간편한 자전거 대여 서비스
+- 현지인이 추천하는 숨은 명소 안내
+- 계절별 추천 코스 제공
+- 지역 맛집과 카페 정보 제공
+- 자전거 여행자를 위한 안전 정보 제공
 
-```bash
-# using npm
-npm start
+## 왜 느린여행일까요?
 
-# OR using Yarn
-yarn start
-```
+서천의 진정한 매력은 천천히 둘러볼 때 비로소 보입니다. 바다를 따라 이어지는 해안도로, 한적한 시골길, 계절마다 달라지는 들판의 풍경... 이 모든 것을 자전거를 타고 천천히 감상하다 보면, 평소에는 미처 발견하지 못했던 서천의 아름다움을 만날 수 있습니다.
 
-## Step 2: Start your Application
+## 이런 분들에게 추천합니다
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+- 🚴‍♂️ 새로운 방식의 여행을 찾는 청년들
+- 🌅 여유로운 속도로 풍경을 즐기고 싶은 분들
+- 🍃 친환경적인 여행을 선호하는 분들
+- 📸 인생샷을 건지고 싶은 포토그래퍼
+- 🏃‍♀️ 활동적인 여행을 좋아하는 분들
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
