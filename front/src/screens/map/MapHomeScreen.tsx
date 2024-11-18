@@ -75,7 +75,7 @@ function MapHomeScreen() {
         // 내 위치 버튼
         showsMyLocationButton ={false}
         customMapStyle={mapStyle}
-
+      
         // 지도를 클릭했을 때 마커추가
         onLongPress={handleLongPressMapView}
         >
@@ -120,11 +120,12 @@ function MapHomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative',
   },
   drawerButton: {
     position: "absolute",
     left: 0,
-    top: 20,
+    top: 40,
     paddingVertical: 10,
     paddingHorizontal: 12,
     backgroundColor: colors.MAIN_700,

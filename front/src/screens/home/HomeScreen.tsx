@@ -1,4 +1,4 @@
-import { colors, mapNavigations } from '@/constants';
+import { bikeStatusNavigations, colors, mapNavigations, myBikeRoadNavigations } from '@/constants';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
@@ -10,6 +10,8 @@ export type RootStackParamList = {
   Home: undefined;
   MapStack: undefined;
   Auth: undefined;
+  BikeStatusHome: undefined;
+  MyBikeRoad: undefined;
   // 필요한 다른 스크린들도 여기에 추가
 };
 
@@ -30,12 +32,18 @@ const HomeScreen = () => {
 
         {/* Main Options */}
         <View style={styles.optionsContainer}>
-          <TouchableOpacity style={[styles.optionBox, {zIndex: 100, backgroundColor: colors.BLUE_100}]}>
+          <TouchableOpacity 
+          style={[styles.optionBox, {zIndex: 100, backgroundColor: colors.BLUE_100}]}
+          onPress={() => navigation.navigate(bikeStatusNavigations.BIKE_STATUS_HOME)}
+          >
             <Image source={require('@/assets/home/home_bike.png')} style={[styles.optionIcon, styles.bikeimg]} />
             <Text style={styles.optionText}>느린 자전거</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.optionBox}>
+          <TouchableOpacity 
+          style={styles.optionBox}
+          onPress={() => navigation.navigate(myBikeRoadNavigations.MY_BIKE_ROAD)}
+          >
             <Image source={require('@/assets/home/home_road.png')} style={[styles.optionIcon, styles.roadimg] } />
             <Text style={styles.optionText}>나만의 자전거길</Text>
           </TouchableOpacity>

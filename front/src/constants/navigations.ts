@@ -17,4 +17,13 @@ const mapNavigations = {
 
 } as const;
 
-export {authNavigations, mapNavigations, mainNavigations}
+const bikeStatusNavigations = {
+  BIKE_STATUS_HOME : "BikeStatusHome",
+  BIKE_STATUS : "BikeStatus"
+} as const;
+
+const myBikeRoadNavigations = {
+  MY_BIKE_ROAD : "MyBikeRoad"
+} as const;
+
+export {authNavigations, mapNavigations, mainNavigations, bikeStatusNavigations, myBikeRoadNavigations}
