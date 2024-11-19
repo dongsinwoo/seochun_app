@@ -7,6 +7,7 @@ import MainDrawerNavigator from '../drawer/MainDrawerNavigator';
 import BikeStatusStackNavigator from '../stack/BikeStatusStackNavigator';
 import { bikeStatusNavigations, mapNavigations, myBikeRoadNavigations } from '@/constants';
 import MyBikeRoadScreen from '@/screens/myBikeRoad/MyBikeRoadScreen';
+import MyPageScreen from '@/screens/user/MyPageScreen';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -19,6 +20,7 @@ function RootNavigator(){
             // 로그인된 경우의 스크린들
             <>
                 <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="MyPage" component={MyPageScreen} />
                 <Stack.Screen 
                     name="MapStack" 
                     component={MainDrawerNavigator}

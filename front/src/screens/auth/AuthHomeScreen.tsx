@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   imageContainer:{
     flex: 3,
-    width: Dimensions.get("screen").width / 1.6
+    width: Dimensions.get("screen").width / 1.6,
   }
 });
 
