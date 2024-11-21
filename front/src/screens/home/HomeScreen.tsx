@@ -53,12 +53,12 @@ const HomeScreen = () => {
         <View style={styles.additionalSection}>
           <Text style={styles.sectionTitle}>이런곳도 있어요</Text>
           <View style={styles.optionsContainer}>
-            <TouchableOpacity style={styles.bottom_ui}>
+            <TouchableOpacity style={styles.bottom_ui} onPress={() => navigation.navigate("Cafe")}>
               <Image source={require('@/assets/home/home_paty.png')} style={styles.optionIcon} />
               <Text style={styles.optionText}>느린 카페</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.bottom_ui}>
+            <TouchableOpacity style={styles.bottom_ui} onPress={() => navigation.navigate("Seochun")}>
               <Image source={require('@/assets/home/home_bus.png')} style={styles.optionIcon} />
               <Text style={styles.optionText}>서천 관광지</Text>
             </TouchableOpacity>

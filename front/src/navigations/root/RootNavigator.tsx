@@ -7,6 +7,8 @@ import { bikeStatusNavigations, myBikeRoadNavigations } from '@/constants';
 import MyBikeRoadScreen from '@/screens/myBikeRoad/MyBikeRoadScreen';
 import { HomeStackParamList } from '@/types/navigator';
 import BottomTabNavigator from '../tab/BottomTabNavigator';
+import CafeScreen from '@/screens/cafe/CafeScreen';
+import SeocheonIntroScreen from '@/screens/seochunIntro/SeochunIntroScreen';
 
 const Stack = createStackNavigator<HomeStackParamList>();
 
@@ -48,6 +50,22 @@ function RootNavigator(){
                     options={{
                         headerShown: true,
                         headerTitle: "나만의 자전거길"
+                    }}
+                />
+                <Stack.Screen 
+                    name="Cafe"
+                    component={CafeScreen}
+                    options={{
+                        headerShown: true,
+                        headerTitle: "카페"
+                    }}
+                />
+                <Stack.Screen 
+                    name="Seochun"
+                    component={SeocheonIntroScreen}
+                    options={{
+                        headerShown: true,
+                        headerTitle: "관광지"
                     }}
                 />
             </>

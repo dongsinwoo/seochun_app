@@ -12,6 +12,8 @@ type HomeStackParamList = {
     BikeStatusHome: undefined;
     MyBikeRoad: undefined;
     BottomTab: undefined;
+    Cafe: undefined;
+    Seochun: undefined;
 
 }
 
