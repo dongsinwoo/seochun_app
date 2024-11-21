@@ -71,7 +71,7 @@ export default function BicycleStatusScreen() {
 
       <View style={styles.gridContainer}>
         {renderCard('현재 속도', 'speed', (
-          <Text style={styles.largeText}>{speed.toFixed(1)} km/h</Text>
+          <Text style={styles.largeText}>0 km/h</Text>
         ))}
         {renderCard('총 주행 거리', 'place', (
           <Text style={styles.largeText}>{distance.toFixed(1)} km</Text>
@@ -79,7 +79,7 @@ export default function BicycleStatusScreen() {
       </View>
 
       {renderCard('주행 시간', 'timer', (
-        <Text style={styles.largeText}>{formatTime(time)}</Text>
+        <Text style={styles.largeText}>00:21:32</Text>
       ))}
 
       <TouchableOpacity 

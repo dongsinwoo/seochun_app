@@ -1,8 +1,8 @@
-import BottomNavigation from '@/components/BottomNavigation';
-import BottomTabNavigator from '@/navigations/tab/BottomTabNavigator';
+import { colors } from '@/constants';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 
 const MyPageScreen = () => {
   const [activeTab, setActiveTab] = useState('recent-rides');
@@ -36,6 +36,7 @@ const MyPageScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.headerTitle}>느린여행</Text>
       <ScrollView style={styles.container}>
         <View style={styles.header}>
         <View style={styles.profileContainer}>
@@ -126,7 +127,6 @@ const MyPageScreen = () => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-      <BottomTabNavigator />
     </SafeAreaView>
   );
 };
@@ -141,6 +141,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 16,
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    padding: 15,
+    backgroundColor: colors.MAIN_700,
+    color: '#fff',
   },
   profileContainer: {
     flexDirection: 'row',

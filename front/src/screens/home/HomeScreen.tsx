@@ -3,19 +3,11 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity,SafeAreaView, Dimensions } from 'react-native';
-import BottomTabNavigator from '@/navigations/tab/BottomTabNavigator';
+import { HomeStackParamList } from '@/types/navigator';
 
-export type RootStackParamList = {
-  Home: undefined;
-  MapStack: undefined;
-  Auth: undefined;
-  BikeStatusHome: undefined;
-  MyBikeRoad: undefined;
-  MyPage: undefined;
-  // 필요한 다른 스크린들도 여기에 추가
-};
 
-type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;
+
+type HomeScreenNavigationProp = StackNavigationProp<HomeStackParamList, 'Home'>;
 
 const HomeScreen = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
@@ -59,22 +51,20 @@ const HomeScreen = () => {
 
         {/* Additional Options */}
         <View style={styles.additionalSection}>
-          <Text style={styles.sectionTitle}>이런것도 있어요</Text>
+          <Text style={styles.sectionTitle}>이런곳도 있어요</Text>
           <View style={styles.optionsContainer}>
             <TouchableOpacity style={styles.bottom_ui}>
               <Image source={require('@/assets/home/home_paty.png')} style={styles.optionIcon} />
-              <Text style={styles.optionText}>느린 파티</Text>
+              <Text style={styles.optionText}>느린 카페</Text>
             </TouchableOpacity>
             
             <TouchableOpacity style={styles.bottom_ui}>
               <Image source={require('@/assets/home/home_bus.png')} style={styles.optionIcon} />
-              <Text style={styles.optionText}>셔틀 운행</Text>
+              <Text style={styles.optionText}>서천 관광지</Text>
             </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
-
-      <BottomTabNavigator />
     </SafeAreaView>
   );
 };

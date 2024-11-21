@@ -1,15 +1,14 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import AuthStackNavigator from "../stack/AuthStackNavigator";
 import useAuth from "../../hooks/queries/useAuth";
-import HomeScreen from "@/screens/home/HomeScreen";
-import { RootStackParamList } from '@/screens/home/HomeScreen';
 import MainDrawerNavigator from '../drawer/MainDrawerNavigator';
 import BikeStatusStackNavigator from '../stack/BikeStatusStackNavigator';
-import { bikeStatusNavigations, mapNavigations, myBikeRoadNavigations } from '@/constants';
+import { bikeStatusNavigations, myBikeRoadNavigations } from '@/constants';
 import MyBikeRoadScreen from '@/screens/myBikeRoad/MyBikeRoadScreen';
-import MyPageScreen from '@/screens/user/MyPageScreen';
+import { HomeStackParamList } from '@/types/navigator';
+import BottomTabNavigator from '../tab/BottomTabNavigator';
 
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<HomeStackParamList>();
 
 function RootNavigator(){
     const {isLogin} = useAuth();
@@ -19,8 +18,14 @@ function RootNavigator(){
         {isLogin ? (
             // 로그인된 경우의 스크린들
             <>
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="MyPage" component={MyPageScreen} />
+                <Stack.Screen 
+                    name="BottomTab" 
+                    component={BottomTabNavigator} 
+                    options={{
+                        headerShown: false,
+                        headerTitle: '메인'
+                    }}
+                />
                 <Stack.Screen 
                     name="MapStack" 
                     component={MainDrawerNavigator}
