@@ -12,7 +12,7 @@ const FeatureItem = ({ icon, text }: { icon: string, text: string }) => (
 const CafeScreen = () => {
   const features = [
     { icon: 'coffee', text: "엄선된 원두의 프리미엄 커피" },
-    { icon: 'watch_later', text: "여유로운 시간을 즐기는 공간" },
+    { icon: 'eco', text: "여유로운 시간을 즐기는 공간" },
     { icon: 'eco', text: "친환경 재료로 만든 건강한 디저트" },
   ];
 

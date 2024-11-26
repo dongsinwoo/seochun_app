@@ -35,6 +35,7 @@ const BottomTabNavigator = () => {
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="qr-code" size={size} color={color} />
           ),
+          headerShown: false
         }}
       />
       <Tab.Screen 
