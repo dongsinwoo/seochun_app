@@ -2,7 +2,7 @@ import { bikeStatusNavigations, colors,  myBikeRoadNavigations } from '@/constan
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
-import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity,SafeAreaView, Dimensions } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity,SafeAreaView, Dimensions, ImageBackground } from 'react-native';
 import { HomeStackParamList } from '@/types/navigator';
 
 
@@ -18,7 +18,7 @@ const HomeScreen = () => {
       <ScrollView style={styles.scrollView}>
         {/* Banner Image */}
         <Image 
-          source={require('../../assets/seochun_banner.png')} 
+          source={require('../../assets/seochun_banner.jpeg')} 
           style={styles.bannerImage}
         />
 
@@ -28,7 +28,7 @@ const HomeScreen = () => {
           style={[styles.optionBox, {zIndex: 100, backgroundColor: colors.BLUE_100}]}
           onPress={() => navigation.navigate(bikeStatusNavigations.BIKE_STATUS_HOME)}
           >
-            <Image source={require('@/assets/home/home_bike.png')} style={[styles.optionIcon, styles.bikeimg]} />
+            <Image source={require('@/assets/home/home_bike.png')} style={[ styles.bikeimg]} />
             <Text style={styles.optionText}>느린 자전거</Text>
           </TouchableOpacity>
           
@@ -36,7 +36,7 @@ const HomeScreen = () => {
           style={styles.optionBox}
           onPress={() => navigation.navigate(myBikeRoadNavigations.MY_BIKE_ROAD)}
           >
-            <Image source={require('@/assets/home/home_road.png')} style={[styles.optionIcon, styles.roadimg] } />
+            <Image source={require('@/assets/home/home_road.png')} style={[ styles.roadimg] } />
             <Text style={styles.optionText}>나만의 자전거길</Text>
           </TouchableOpacity>
         </View>
@@ -44,22 +44,23 @@ const HomeScreen = () => {
         {/* Map Section */}
         <View style={styles.optionsContainer}>
           <TouchableOpacity style={styles.mapContainer} onPress={() => navigation.navigate('MapStack')}>
-            <Text style={styles.sectionTitle}>서천 느리게 여행하기</Text>
-            {/* Map Component will go here */}
+            <ImageBackground source={require('@/assets/home/home_map.jpeg')} style={styles.mapImage} >
+              <Text style={styles.sectionTitle}>서천 느리게 여행하기</Text>
+            </ImageBackground>
           </TouchableOpacity>
         </View>
 
         {/* Additional Options */}
         <View style={styles.additionalSection}>
-          <Text style={styles.sectionTitle}>이런곳도 있어요</Text>
+          <Text style={styles.bottomTitle}>이런곳도 있어요</Text>
           <View style={styles.optionsContainer}>
             <TouchableOpacity style={styles.bottom_ui} onPress={() => navigation.navigate("Cafe")}>
-              <Image source={require('@/assets/home/home_paty.png')} style={styles.optionIcon} />
+              <Image source={require('@/assets/home/home_paty.png')} style={styles.cafeIcon} />
               <Text style={styles.optionText}>느린 카페</Text>
             </TouchableOpacity>
             
             <TouchableOpacity style={styles.bottom_ui} onPress={() => navigation.navigate("Seochun")}>
-              <Image source={require('@/assets/home/home_bus.png')} style={styles.optionIcon} />
+              <Image source={require('@/assets/home/home_bus.png')} style={styles.cameraIcon} />
               <Text style={styles.optionText}>서천 관광지</Text>
             </TouchableOpacity>
           </View>
@@ -89,14 +90,25 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal:16,
     width: "100%",
-
+    paddingLeft: 16,
+    paddingRight: 16,
+    boxSizing: "border-box",
   },
   bannerImage: {
     width: '100%',
     height: 150,
     resizeMode: 'cover',
     borderRadius: 10,
-    marginTop:16
+    marginTop:16,
+    borderWidth: 0.5,
+    borderColor: "#cccccc",
+  },
+  mapImage: {
+    width: "100%",
+    height: "100%",
+    resizeMode: 'cover',
+    borderRadius: 10,
+    
   },
   optionsContainer: {
     flexDirection: 'row',
@@ -108,27 +120,40 @@ const styles = StyleSheet.create({
   optionBox: {
     position: 'relative',
     backgroundColor: '#F5F5F5',
-    padding: 20,
     borderRadius: 10,
     alignItems: 'center',
-    width: "50%",
+    width: SCREEN_WIDTH / 2 - 24,
     height: 171,
     justifyContent: 'center',
   },
   bottom_ui: {
-    padding: 20,
-    width: "50%",
+    width: SCREEN_WIDTH / 2 - 24,
     height: 120,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.GRAY_200,
+    backgroundColor: "#F8F8F8",
     borderRadius: 10,
+    marginBottom: 16,
+    position: "relative",
+
   },
-  optionIcon: {
-    
-    width: 50,
-    height: 50,
+  cameraIcon: {
+    width: "65%",
+    height: "100%",
+    objectFit: "contain",
     marginBottom: 10,
+    position: "absolute",
+    top: 0,
+    right: 0,
+  },
+  cafeIcon: {
+    width: "35%",
+    height: "40%",
+    objectFit: "contain",
+    marginBottom: 10,
+    position: "absolute",
+    bottom: 0,
+    right: 16,
   },
   bikeimg: {
     position: 'absolute',
@@ -156,14 +181,20 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   mapContainer: {
-    padding: 16,
     backgroundColor: '#F5F5F5',
     borderRadius: 10,
+    overflow: "hidden",
     height: 200,
     marginTop:16,
     width: "100%"
+    
   },
   sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    padding: 16,
+  },
+  bottomTitle: {
     fontSize: 18,
     fontWeight: 'bold',
   },

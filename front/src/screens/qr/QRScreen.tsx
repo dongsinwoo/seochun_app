@@ -1,5 +1,6 @@
+import { colors } from '@/constants';
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Alert, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Alert, Dimensions, SafeAreaView } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -21,38 +22,50 @@ const QRScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.headerTitle}>느린여행</Text>
-      <View style={styles.cameraContainer}>
-        <RNCamera
-          style={styles.camera}
-          onBarCodeRead={onBarCodeRead}
-          captureAudio={false}
-        />
-        <View style={styles.frameContainer}>
-          {/* Corner frames */}
-          <View style={[styles.corner, styles.topLeft]} />
-          <View style={[styles.corner, styles.topRight]} />
-          <View style={[styles.corner, styles.bottomLeft]} />
-          <View style={[styles.corner, styles.bottomRight]} />
-        </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>느린여행</Text>
       </View>
-      <Text style={styles.guideText}>QR 코드를 스캔해주세요</Text>
-    </View>
+      <View style={styles.content}>
+        <View style={styles.cameraContainer}>
+          <RNCamera
+            style={styles.camera}
+            onBarCodeRead={onBarCodeRead}
+            captureAudio={false}
+          />
+          <View style={styles.frameContainer}>
+            <View style={[styles.corner, styles.topLeft]} />
+            <View style={[styles.corner, styles.topRight]} />
+            <View style={[styles.corner, styles.bottomLeft]} />
+            <View style={[styles.corner, styles.bottomRight]} />
+          </View>
+        </View>
+        <Text style={styles.guideText}>QR 코드를 스캔해주세요</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#fff',
+  },
+  header: {
+    backgroundColor: colors.MAIN_700,
+    padding: 15,
+    alignItems: 'center',
   },
   headerTitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 30,
+    color: '#fff',
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
   cameraContainer: {
     width: FRAME_SIZE,
