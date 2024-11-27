@@ -80,7 +80,7 @@ const MyPageScreen = () => {
           style={[styles.tabButton, activeTab === 'recent-rides' && styles.activeTabButton]}
           onPress={() => setActiveTab('recent-rides')}
         >
-          <Text style={[styles.tabButtonText, activeTab === 'recent-rides' && styles.activeTabButtonText]}>최근 주행</Text>
+          <Text style={[styles.tabButtonText, activeTab === 'recent-rides' && styles.activeTabButtonText]}>나만의 자전거길</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.tabButton, activeTab === 'saved-places' && styles.activeTabButton]}

@@ -30,6 +30,7 @@ function MapHomeScreen() {
   const [selectLocation, setSelectLocation] = useState<LatLng|null>();
   const {data: markers = []} = useGetMarkers();
   usePermission("LOCATION");
+
   const handlePressUserLocation = () => {
     if(isUserLocationError) return;
     mapRef.current?.animateToRegion({
@@ -58,6 +59,12 @@ function MapHomeScreen() {
     setSelectLocation(null);
   }
 
+  const handlePressDirections = () => {
+    navigation.navigate(mapNavigations.MAP_DIRECTIONS, {
+      startLocation: selectLocation ?? userLocation,
+      endLocation: userLocation,
+    });
+  }
 
  
   return (
@@ -106,6 +113,9 @@ function MapHomeScreen() {
         <Ionicons name='menu' size={25} color={colors.WHITE} />
       </Pressable>
       <View style={styles.buttonList}>
+        <Pressable style={styles.mapButton} onPress={handlePressDirections}>
+          <MaterialIcons name='directions' size={25} color={colors.WHITE} />
+        </Pressable>
         <Pressable style={styles.mapButton} onPress={handlePressAddPost}>
           <MaterialIcons name='add' size={25} color={colors.WHITE} />
         </Pressable>

@@ -4,6 +4,7 @@ import {  mapNavigations } from '../../constants';
 import MapHomeScreen from '@/screens/map/MapHomeScreen';
 import AddPostScreen from '@/screens/map/AddPostScreen';
 import { LatLng } from 'react-native-maps';
+import DirectionsScreen from '@/screens/map/DirectionsScreen';
 
 
 
@@ -13,6 +14,10 @@ export type MapStackParamList = {
   [mapNavigations.MAP_HOME] : undefined;
   [mapNavigations.MAP_ADD_POST] : {
     location: LatLng,
+  }
+  [mapNavigations.MAP_DIRECTIONS] : {
+    startLocation: LatLng,
+    endLocation: LatLng,
   }
 }
 
@@ -51,6 +56,16 @@ function MapStackNavigator() {
         options={{
           headerTitle: "장소 추가",
           headerShown: true,  // false에서 true로 변경
+          headerBackTitle: " ",
+        }}
+        />
+        {/* 길찾기 페이지 */}
+        <Stack.Screen 
+        name= {mapNavigations.MAP_DIRECTIONS} 
+        component = {DirectionsScreen}
+        options={{
+          headerTitle: "길찾기",
+          headerShown: true,
           headerBackTitle: " ",
         }}
         />
