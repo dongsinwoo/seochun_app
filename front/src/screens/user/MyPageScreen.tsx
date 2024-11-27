@@ -40,7 +40,7 @@ const MyPageScreen = () => {
       <ScrollView style={styles.container}>
         <View style={styles.header}>
         <View style={styles.profileContainer}>
-          <Image source={{ uri: user.profileImage }} style={styles.avatar} />
+          <Image source={require('@/assets/user-default.png')} style={styles.avatar} />
           <View style={styles.userInfo}>
             <Text style={styles.userName}>{user.name}</Text>
             <View style={styles.levelContainer}>

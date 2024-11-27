@@ -60,7 +60,7 @@ function MapHomeScreen() {
   }
 
   const handlePressDirections = () => {
-    navigation.navigate(mapNavigations.MAP_DIRECTIONS, {
+    navigation.navigate(mapNavigations.MAP_DIRECTIONS_STACK, {
       startLocation: selectLocation ?? userLocation,
       endLocation: userLocation,
     });

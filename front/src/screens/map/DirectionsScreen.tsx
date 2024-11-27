@@ -1,9 +1,12 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import { colors } from '@/constants';
+import { drectionsStackNavigations } from '@/constants';
+import { useNavigation } from '@react-navigation/native';
+
 
 const DirectionsScreen = () => {
+    const navigation = useNavigation();
   return (
     <View style={styles.container}>
       {/* 검색 입력 섹션 */}
@@ -26,7 +29,9 @@ const DirectionsScreen = () => {
           />
         </View>
 
-        <TouchableOpacity style={styles.searchButton}>
+        <TouchableOpacity style={styles.searchButton} onPress={() => {
+          navigation.navigate(drectionsStackNavigations.MAP_DIRECTIONS_STATUS as never)
+        }}>
           <Text style={styles.searchButtonText}>경로 검색</Text>
         </TouchableOpacity>
       </View>

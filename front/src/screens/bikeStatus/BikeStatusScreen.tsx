@@ -1,3 +1,4 @@
+import { colors } from '@/constants';
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity, Modal, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';

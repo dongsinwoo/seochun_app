@@ -3,12 +3,13 @@ import AuthStackNavigator from "../stack/AuthStackNavigator";
 import useAuth from "../../hooks/queries/useAuth";
 import MainDrawerNavigator from '../drawer/MainDrawerNavigator';
 import BikeStatusStackNavigator from '../stack/BikeStatusStackNavigator';
-import { bikeStatusNavigations, myBikeRoadNavigations } from '@/constants';
+import { bikeStatusNavigations, colors, myBikeRoadNavigations } from '@/constants';
 import MyBikeRoadScreen from '@/screens/myBikeRoad/MyBikeRoadScreen';
 import { HomeStackParamList } from '@/types/navigator';
 import BottomTabNavigator from '../tab/BottomTabNavigator';
 import CafeScreen from '@/screens/cafe/CafeScreen';
 import SeocheonIntroScreen from '@/screens/seochunIntro/SeochunIntroScreen';
+import { View } from 'react-native';
 
 const Stack = createStackNavigator<HomeStackParamList>();
 
@@ -41,7 +42,8 @@ function RootNavigator(){
                     component={BikeStatusStackNavigator}
                     options={{
                         headerShown: true,
-                        headerTitle: '느린 자전거'
+                        headerTitle: '느린 자전거',
+                        
                     }}
                 />
                 <Stack.Screen 

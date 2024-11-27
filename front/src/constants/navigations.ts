@@ -14,7 +14,7 @@ const authNavigations = {
 const mapNavigations = {
   MAP_HOME : "MapHome",
   MAP_ADD_POST : "MapAddPost",
-  MAP_DIRECTIONS : "MapDirections"
+  MAP_DIRECTIONS_STACK : "MapDirectionsStack"
 
 } as const;
 
@@ -27,4 +27,9 @@ const myBikeRoadNavigations = {
   MY_BIKE_ROAD : "MyBikeRoad"
 } as const;
 
-export {authNavigations, mapNavigations, mainNavigations, bikeStatusNavigations, myBikeRoadNavigations}
+const drectionsStackNavigations = {
+  MAP_DIRECTIONS : "MapDirections",
+  MAP_DIRECTIONS_STATUS : "MapDirectionsStatus"
+} as const;
+
+export {authNavigations, mapNavigations, mainNavigations, bikeStatusNavigations, myBikeRoadNavigations, drectionsStackNavigations}
