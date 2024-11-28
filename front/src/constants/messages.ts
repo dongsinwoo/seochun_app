@@ -1,3 +1,8 @@
+
+const errorsMessages = {
+  GET_ADDRESS: '주소를 알 수 없습니다.',
+}
+
 const alerts = {
     LOCATION_PERMISSION: {
       TITLE: '위치 권환 허용이 필요합니다',
@@ -13,4 +18,4 @@ const alerts = {
     }
   }
 
-export {alerts};
+export {alerts, errorsMessages};

@@ -85,6 +85,7 @@ function MapHomeScreen() {
       
         // 지도를 클릭했을 때 마커추가
         onLongPress={handleLongPressMapView}
+        region={{...userLocation, latitudeDelta: 0.00922, longitudeDelta: 0.00421,}}
         >
           {markers.map(({id, color, score, latitude, longitude}) => (
             <CustomMarker
