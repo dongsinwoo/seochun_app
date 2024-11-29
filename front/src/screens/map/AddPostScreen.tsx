@@ -1,23 +1,28 @@
 import AddPostHeaderRight from '@/components/AddPostHeaderRight';
 import CustomButton from '@/components/CustomButton';
 import DatePickOption from '@/components/DatePickOption';
+import ImageInput from '@/components/ImageInput';
 import InputField from '@/components/InputField';
 import MarkerSelector from '@/components/MarkerSelector';
+import PreviewImageList from '@/components/PreviewImageList';
 import ScoreInput from '@/components/ScoreInput';
 import { colors, mapNavigations } from '@/constants';
 import useMutateCreatePost from '@/hooks/queries/useMutateCreatePost';
 import useForm from '@/hooks/useForm';
 import useGetAddress from '@/hooks/useGetAddress';
+import useImagePicker from '@/hooks/useImagePicker';
 import useModal from '@/hooks/useModal';
+import usePermission from '@/hooks/usePermission';
 import { MapStackParamList } from '@/navigations/stack/MapStackNavigator';
 import { MarkerColor } from '@/types/domain';
 import { validateAddPost } from '@/utils';
 import { getDateWithSeparator } from '@/utils/date';
 import { StackScreenProps } from '@react-navigation/stack';
 import React, { useEffect, useRef, useState } from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Image, Platform} from 'react-native';
 import { ScrollView, TextInput } from 'react-native-gesture-handler';
 import Octicons from 'react-native-vector-icons/Octicons'
+
 
 type AddPostScreenProps = StackScreenProps<MapStackParamList, typeof mapNavigations.MAP_ADD_POST>;
 
@@ -35,7 +40,11 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
   const [isPicked, setIsPicked] = useState(false);
   const address = useGetAddress(location);
   const dateOption = useModal();
+  const imagePicker = useImagePicker({initialImage: []});
 
+  usePermission("PHOTO")
+
+  console.log(imagePicker.imageUris);
   const handleConfirmDate = () => {
     dateOption.hide();
     setIsPicked(true);
@@ -117,7 +126,15 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
                 />
                 <MarkerSelector markerColor = {markerColor} score = {score} onPressMarker = {handleSelectMarker}/>
                 <ScoreInput score = {score} onChangeScore = {handleChangeScore}/>
+                
+                
+                <View style={styles.imageViewer}>
+                  <ImageInput onChange = {imagePicker.handleChange}/>
+                  <PreviewImageList imageUris = {imagePicker.imageUris}/>
+                </View>
                 <DatePickOption isVisible = {dateOption.isVisible} date = {date} onChangeDate = {handleChangeDate} onConfirmDate = {handleConfirmDate}/>
+                
+                
             </View>
             
         </ScrollView>
@@ -138,6 +155,10 @@ const styles = StyleSheet.create({
   inputContainer: {
     gap: 20,
     marginBottom: 20,
+  },
+  imageViewer: {
+    flexDirection: 'row',
+    gap: 5,
   },
 });
 

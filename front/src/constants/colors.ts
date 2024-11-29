@@ -17,6 +17,7 @@ const colors = {
     YELLOW_400: "#FFE594",
     PURPLE_400: "#C4C4E7",
     GRAY_100: "#F5F5F5",
+    GRAY_300: "#D9D9D9",
 }
 
 export {colors}
