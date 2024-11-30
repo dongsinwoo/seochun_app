@@ -20,6 +20,18 @@ function useImagePicker({initialImage=[]}:useImagePickerType) {
         }
         setImageUris(prev => [...prev, ...uris.map(uri => ({uri}))]);
     }
+    
+    const changeImageUrisOrder = (fromIndex: number, toIndex: number) => {
+        const copyImageUris = [...imageUris];
+        const [removed] = copyImageUris.splice(fromIndex, 1);
+        copyImageUris.splice(toIndex, 0, removed);
+        setImageUris(copyImageUris);
+    }
+
+    const deleteImageUri = (uri: string) => {
+        const newImageUris = imageUris.filter(image => image.uri !== uri);
+        setImageUris(newImageUris);
+    }
 
     const handleChange = () => {
         ImagePicker.openPicker({
@@ -41,7 +53,7 @@ function useImagePicker({initialImage=[]}:useImagePickerType) {
             Alert.alert('사진 선택 실패', '사진 선택에 실패했습니다.');
         });
     }
-    return {imageUris, handleChange};
+    return {imageUris, handleChange, deletede: deleteImageUri, changeOrder: changeImageUrisOrder};
 }  
 
 export default useImagePicker;

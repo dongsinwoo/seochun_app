@@ -130,7 +130,7 @@ function AddPostScreen({route, navigation}: AddPostScreenProps) {
                 
                 <View style={styles.imageViewer}>
                   <ImageInput onChange = {imagePicker.handleChange}/>
-                  <PreviewImageList imageUris = {imagePicker.imageUris}/>
+                  <PreviewImageList imageUris = {imagePicker.imageUris} onDelete = {imagePicker.deletede} onChangeOrder = {imagePicker.changeOrder}/>
                 </View>
                 <DatePickOption isVisible = {dateOption.isVisible} date = {date} onChangeDate = {handleChangeDate} onConfirmDate = {handleConfirmDate}/>
                 
